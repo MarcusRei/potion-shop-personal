@@ -1,0 +1,128 @@
+@use "variables" as var;
+@use "colors" as col;
+
+//Screen size
+@mixin mobile-only {
+  @media screen and (max-width: var.$tablet) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media screen and (min-width: var.$tablet) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media screen and (min-width: var.$desktop) {
+    @content;
+  }
+}
+@mixin desktop--big-scr {
+  @media screen and (min-width: var.$big-scr) {
+    @content;
+  }
+}
+
+//background
+@mixin background--mobile {
+  background-color: col.$color-background-grey;
+  background-image: url(../assets/images/PhoneWall.png);
+  background-repeat: repeat-y;
+  background-size: contain;
+  background-position: center top;
+}
+
+@mixin background--tablet {
+  @media screen and (min-width: var.$tablet) {
+    background-color: col.$color-background-grey;
+    background-image: url(../assets/images/Wall.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+  }
+}
+@mixin background--desktop {
+  @media screen and (min-width: var.$desktop) {
+    background-color: col.$color-background-grey;
+    background-image: url(../assets/images/Wall.png);
+    background-repeat: repeat-y;
+    background-size: contain;
+    background-position: center top;
+  }
+}
+//header
+@mixin header {
+  height: var.$header-height--mobile;
+
+  @media screen and (min-width: var.$tablet) {
+    height: var.$header-height--tablet;
+  }
+  @media screen and (min-width: var.$desktop) {
+    height: var.$header-height--desktop;
+  }
+}
+
+//hanging-plank
+@mixin hanging-plank--mobile {
+  background-image: url(../assets/images/MobileHangingSign.png);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100vw;
+}
+
+@mixin hanging-plank--tablet {
+  @media screen and (min-width: var.$tablet) {
+    background-image: url("../assets/images/TabletHangingSign.png");
+  }
+}
+
+@mixin hanging-plank--desktop {
+  @media screen and (min-width: var.$desktop) {
+    background-image: url("../assets/images/DesktopHangingSign.png");
+  }
+}
+
+//burned images
+@mixin burned--img {
+  mix-blend-mode: multiply;
+  &:hover {
+    mix-blend-mode: soft-light;
+  }
+}
+
+//burned text & icons
+@mixin burned--text {
+  color: col.$color-burned;
+  mix-blend-mode: multiply;
+}
+@mixin burned--text-btn {
+  color: col.$color-burned;
+  mix-blend-mode: multiply;
+  &:hover {
+    background-color: transparent;
+    mix-blend-mode: soft-light;
+    color: col.$color-grey-light;
+  }
+}
+@mixin no-burned--text-btn {
+  background-image: url("../assets/images/TabletHangingSign.png");
+  background-size: auto;
+  background-position: center center;
+  &:hover {
+    @include burned--text;
+    background-color: col.$color-grey-very-light;
+    color: col.$color-text-light;
+  }
+}
+@mixin burned--icon {
+  color: col.$color-text-light;
+  mix-blend-mode: soft-light;
+}
+
+//menu
+@mixin menu--font {
+  font-family: var.$font-main;
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: x-large;
+}

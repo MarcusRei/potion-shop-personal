@@ -1,0 +1,238 @@
+@use "mixins" as mix;
+@use "variables" as var;
+@use "colors" as col;
+
+// layout header
+header {
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  align-items: center;
+  width: 100vw;
+  top: 0;
+  z-index: 100;
+  @include mix.header;
+  @include mix.hanging-plank--mobile;
+  @include mix.hanging-plank--tablet;
+  @include mix.hanging-plank--desktop;
+}
+
+//layout navigation bar
+nav {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  @include mix.tablet {
+    justify-content: flex-end;
+  }
+  @include mix.desktop {
+    justify-content: space-between;
+  }
+
+  .logo {
+    &-container {
+      display: flex;
+      justify-content: center;
+      align-self: center;
+      width: 30vw;
+      height: var.$header-height--mobile;
+      cursor: pointer;
+
+      @include mix.tablet {
+        height: var.$header-height--tablet;
+        width: 70vw;
+        justify-content: flex-start;
+      }
+      @include mix.desktop {
+        width: 10vw;
+        height: var.$header-height--desktop;
+      }
+    }
+    &-box {
+      display: flex;
+      align-items: center;
+      height: 100%;
+    }
+    &-icon {
+      height: 60%;
+      @include mix.burned--img;
+
+      @include mix.desktop {
+        margin-left: 0;
+        margin-left: 2em;
+      }
+    }
+  }
+
+  .desktopnav {
+    &-container {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+    &-menu {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      padding: 0;
+      list-style-type: none;
+      margin: 0;
+
+      &__checkout {
+        margin-right: 2rem;
+      }
+
+      @include mix.desktop {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .menu-link {
+    text-decoration: none;
+    @include mix.burned--text-btn;
+    @include mix.menu--font;
+
+    &:hover {
+      mix-blend-mode: color-burn;
+      color: rgb(200, 200, 200);
+    }
+  }
+
+  .shoppingcart-container {
+    display: flex;
+    height: var.$header-height--mobile;
+    justify-content: flex-end;
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    width: 40vw;
+    @include mix.tablet {
+      height: var.$header-height--tablet;
+      width: 10vw;
+      justify-content: center;
+    }
+    @include mix.desktop {
+      height: var.$header-height--desktop;
+      width: 10vw;
+    }
+
+    &__checkout {
+      display: none;
+    }
+
+    .cart-icon {
+      height: 60%;
+      @include mix.burned--img;
+    }
+  }
+}
+
+// layout and styling hamburger-menu
+#hamburgerButton {
+  display: flex; //
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 100;
+  padding: 0;
+  width: 30vw;
+
+  @include mix.tablet {
+    width: 15vw;
+  }
+  @include mix.desktop {
+    width: 10vw;
+  }
+
+  @include mix.burned--text-btn;
+
+  @include mix.desktop {
+    display: none;
+  }
+
+  .icon {
+    font-size: 4rem;
+  }
+
+  #closeIcon {
+    display: none;
+  }
+}
+
+.mobilenav {
+  &-container {
+    display: none;
+    flex-direction: column;
+    transform: translateY(-100%);
+    transition: transform 0.2s;
+    position: absolute;
+    width: 100vw;
+    top: 8vh;
+
+    @include mix.desktop {
+      display: none;
+    }
+
+    .menu-link-mobile {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      @include mix.burned--text-btn;
+      @include mix.menu--font;
+      width: 100vw;
+      font-size: 1.5rem;
+      margin-top: 10px;
+    }
+
+    &.showMenu {
+      transform: translateY(0);
+      display: flex;
+    }
+
+    @include mix.desktop {
+      display: none;
+    }
+  }
+  &-menu {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include mix.desktop {
+      display: none;
+    }
+  }
+}
+.hamburger-menu-item {
+  &:first-child {
+    margin-top: 0.2em;
+
+    @include mix.tablet {
+      margin-top: 0.75em;
+    }
+  }
+  width: 100vw;
+  height: 10vh;
+
+  @include mix.hanging-plank--mobile;
+  @include mix.hanging-plank--tablet;
+
+  display: flex;
+  justify-content: center;
+}
