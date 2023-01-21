@@ -11,7 +11,7 @@
   top: 0;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
-  background-color: rgba(col.$color-accent-green, 0.1);
+  background-color: rgba(col.$color-grey-very-light, 0.3);
 
   &-content {
     background-color: col.$color-grey-very-dark;
@@ -33,7 +33,7 @@
 
       &:hover,
       &:focus {
-        color: col.$color-accent-green;
+        color: col.$color-accent-purple;
         text-decoration: none;
         cursor: pointer;
       }

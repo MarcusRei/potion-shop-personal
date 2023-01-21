@@ -108,9 +108,6 @@ footer {
 .logotype-img {
   width: 30vw;
 
-  @include mix.tablet {
-    width: 20vw;
-  }
   @include mix.desktop {
     display: flex;
     width: 10vw;

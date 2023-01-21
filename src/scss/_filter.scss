@@ -20,8 +20,6 @@
     flex-direction: column;
     align-items: center;
     gap: 0.5em;
-    @include mix.background--mobile;
-    @include mix.background--tablet;
 
     width: 60vw;
     z-index: 200;
@@ -35,13 +33,12 @@
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   }
   &-btn {
-    @include mix.no-burned--text-btn;
-    color: col.$color-text-light;
+    @include mix.main-button;
     width: 4em;
-    border: none;
     height: 3em;
-    border-radius: 5px;
+
     &:hover {
+      background-color: col.$color-grey-very-light;
       cursor: pointer;
     }
   }
@@ -88,29 +85,16 @@ input[type="checkbox"] {
   accent-color: col.$color-accent-purple;
 }
 
-#clear {
-  &-filter {
-    @include mix.no-burned--text-btn;
-    color: col.$color-text-light;
-    width: 6em;
-    background-color: col.$color-accent-purple;
-    border: none;
-    height: 3em;
-    border-radius: 5px;
-    &:hover {
-      background-color: col.$color-grey-very-light;
-      cursor: pointer;
-    }
+#clear-filter {
+  @include mix.main-button;
+  height: 3em;
+
+  &:hover {
+    background-color: col.$color-grey-very-light;
+    cursor: pointer;
   }
 }
 
 .menu-btn {
-  background-color: col.$color-grey-dark;
-  border: none;
-  height: 3em;
-  width: 100%;
-  color: col.$color-text-light;
-  &:hover {
-    background-color: col.$color-grey-light;
-  }
+  @include mix.main-button;
 }
