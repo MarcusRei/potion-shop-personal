@@ -1,6 +1,6 @@
 # The potion shop
 
-[the potion shop](https://i.ibb.co/F8GfX6H/potion-shop-personal.jpg)
+![the potion shop](https://i.ibb.co/F8GfX6H/potion-shop-personal.jpg)
 
 This is a personal version of a group project called The Potion Shop. This one is made because the original one is archived and can be found [here!](https://github.com/MarcusRei/grupp-8-potion-shop)
 
