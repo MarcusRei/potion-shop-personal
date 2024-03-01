@@ -1,5 +1,7 @@
 # The potion shop
 
+[the potion shop logo](https://i.ibb.co/F8GfX6H/potion-shop-personal.jpg)
+
 This is a personal version of a group project called The Potion Shop. This one is made because the original one is archived and can be found [here!](https://github.com/MarcusRei/grupp-8-potion-shop)
 
 A lot of the original images and assets have been stripped out because of weird rendering issues. If you want all the amazing art created by [Carolina](https://github.com/Carowa27) you should go see the original.
