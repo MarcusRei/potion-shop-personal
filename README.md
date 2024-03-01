@@ -1,45 +1,45 @@
 # The potion shop
 
-Det här var en gruppupgift i kursen agilt projektarbete på medieinstitutet i Stockholm.
+This is a personal version of a group project called The Potion Shop. This one is made because the original one is archived and can be found [here!](https://github.com/MarcusRei/grupp-8-potion-shop)
 
-## Målsättningen
-Vår uppgift var att skapa en webbshop för produkter som vi själva bestämde.
+A lot of the original images and assets have been stripped out because of weird rendering issues. If you want all the amazing art created by [Carolina](https://github.com/Carowa27) you should go see the original.
 
-Vi följde en krav-spec som vi fick och utefter den byggde vi den funktionalitet som behövdes.
-#### Krav Specifikationen innehöll följande punkter:
-- En landningssida (startsida)
-- En produktsida (Produktdetaljer)
-- En kassasida
-- En varukorg
-- Kunna lägga produkter i varukorgen
-- Simulera att ett köp genomförs på kassasidan
-- Beräkna fram ett totalpris på produkterna i varukorgen
-- Att informationen i varukorgen lagras genom utökade objekt, inte bara en produkt
-- Att kunna öka/minska antalet produkter i varukorgen
-- Att kunna öka/minska antalet produkter på kassasidan
-- Koden skall vara mycket väl strukturerad, väl formaterad samt innehålla god namngivning
+## Goal
+The goal was to create the frontend for a e-commerce site of our own choosing.
+This is the specifications we were handed
 
-## Produkten
-Vi har valt att den produkt vi ska sälja i vår webbshop kommer att vara en "potion-shop" från ett spel.
+#### Your project needs to include the following:
+- A landning page (Homepage)
+- A products page (product details)
+- A checkout
+- A cart
+- A user must be able to add products to their cart
+- Simulate a purchase at the checkout
+- Calculate the total price of the porducts in the users cart
+- The data in the cart needs to be collected via extended objects and not a single object
+- A user should be able to add or remove products from their cart 
+- A user should be able to add or remove products at checkout
+- Your code needs to be well structured and well thought out
 
-## Tekniker & verktyg
-Vi kommer att använda oss av Jira som verktyg för att kommunicera och hålla ordning på vårt projekt via en "scrum board".
-Vi kommer att använda den agila arbetsmetoden "Scrum" för att hålla ett flexibelt projekt som vi kan anpassa efter produktens utformande och produktägarens behov.
+## The products
+The products we chose to sell was potions like in a potion shopin a videogame.
 
-#### Den teknik vi använde oss av i det här projeket var följande:
+## Techstack
+We used Jira for bug and ticket tracking. We also used scrum to manage the project.
+
+The main techs we used were:
 - typescript
 - parcel
 - scss
 
-### Ursprungliga utvecklingsteamet
-- Marcus Reineck
-- Jennifer McAllister
-- Carolina Warntorp
+### The original development team
+- [Marcus Reineck](https://github.com/MarcusRei)
+- [Jennifer McAllister](https://github.com/jennifer-mcallister)
+- [Carolina Warntorp](https://github.com/Carowa27)
 
-### Nuvarande utvecklingsteam
-- Marcus Reineck
+This version however is handled by just me, Marcus.
 
-### Ursprungliga produktägare
+### The original product owners
 - Linda Mossberg
 - Sebastian Tegel
 
