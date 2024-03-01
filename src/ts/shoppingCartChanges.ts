@@ -3,7 +3,6 @@ import { CartProductTemplate } from "./models/CartProductTemplate";
 import { ProductTemplate } from "./models/ProductTemplate";
 import { renderUserCartinWidget } from "./services/userCartWidget";
 
-//original addProductToCart function
 export function addProductToCart(
   list: CartProductTemplate[],
   product: ProductTemplate,
@@ -34,7 +33,6 @@ export function addProductToCart(
   }
 }
 
-//change quantity in object
 export function changeQuantity(
   listPosition: number,
   product: CartProductTemplate,
@@ -50,7 +48,6 @@ export function changeQuantity(
   renderUserCartinWidget();
 }
 
-//delete specific object/product from cart
 export function deleteFromCart(
   listPosition: number,
   list: CartProductTemplate[]
@@ -64,7 +61,6 @@ export function deleteFromCart(
   renderUserCartinWidget();
 }
 
-//delete all objects/products from cart
 export function emptyShoppingCart(list: CartProductTemplate[]) {
   for (let i = 0; i < list.length; i++) {
     list.splice(i, list.length);

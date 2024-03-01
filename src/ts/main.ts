@@ -5,7 +5,6 @@ import {
   toggleUserCartWidget,
 } from "./services/userCartWidget";
 
-// usercart button
 let userCartBtn: HTMLButtonElement = document.querySelector(
   ".shoppingcart-container"
 ) as HTMLButtonElement;
@@ -15,12 +14,10 @@ userCartBtn.addEventListener("click", () => {
   renderUserCartinWidget();
 });
 
-// hamburgermenu button
 document.getElementById("hamburgerButton")?.addEventListener("click", () => {
   toggleHamburgerMenu();
 });
 
-// hamburgermenu toggle
 function toggleHamburgerMenu() {
   const mobileMenu = document.getElementById("mobilenav") as HTMLUListElement;
   const closeIcon = document.getElementById("closeIcon") as HTMLSpanElement;
@@ -29,7 +26,6 @@ function toggleHamburgerMenu() {
     "user-cart__container"
   ) as HTMLDivElement;
 
-  // toggle usercartwidget and hamburgermenu if hamburgermenu is clicked
   if (usercartContainer.classList.contains("user-cart__visible")) {
     usercartContainer.classList.remove("user-cart__visible");
     usercartContainer.classList.add("user-cart__invisible");

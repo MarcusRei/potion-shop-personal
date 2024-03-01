@@ -24,51 +24,42 @@ import { addProductToCart, changeQuantity } from "./shoppingCartChanges";
   renderProductlist(products);
 };
 
-// clearLocalStorage();
 export function renderProductlist(listToRender: ProductTemplate[]) {
   (document.querySelector(".product__list") as HTMLElement).innerHTML = "";
   for (let i = 0; i < listToRender.length; i++) {
-    //Creates container for a product
     let productContainer = document.createElement("div");
     productContainer.classList.add("product__container");
     productContainer.setAttribute("id", listToRender[i].id);
     document.querySelector(".product__list")?.appendChild(productContainer);
 
-    //Creates element for product image
     let productImg = document.createElement("img");
     productImg.classList.add("product__container-image");
     productImg.src = listToRender[i].shelfImage;
     productImg.alt = "Picture of product";
     productContainer.appendChild(productImg);
 
-    //Creates element for product__info
     let productInfo = document.createElement("div");
     productInfo.classList.add("product__info");
     productContainer.appendChild(productInfo);
 
-    //Creates element for inner text container
     let productinfoTextContainer = document.createElement("div");
     productinfoTextContainer.classList.add("product__info-text-container");
     productInfo.appendChild(productinfoTextContainer);
 
-    //Creates element for product name
     let productName = document.createElement("p");
     productName.classList.add("product__info-name");
     productName.innerHTML = listToRender[i].name;
     productinfoTextContainer.appendChild(productName);
 
-    //Creates element for product price
     let productPrice = document.createElement("p");
     productPrice.classList.add("product__info-price");
     productPrice.innerHTML = listToRender[i].price.toString() + " G";
     productinfoTextContainer.appendChild(productPrice);
 
-    //Creates inputs container
     let productInputs = document.createElement("div");
     productInputs.classList.add("product__inputs");
     productinfoTextContainer.appendChild(productInputs);
 
-    //Creates input field
     let productAmount = document.createElement("input");
     productAmount.setAttribute("id", `add-${listToRender[i].id}-input`);
     productAmount.type = "number";
@@ -78,7 +69,6 @@ export function renderProductlist(listToRender: ProductTemplate[]) {
     productAmount.classList.add("product__info-amount");
     productInputs.appendChild(productAmount);
 
-    //Creates "add to cart" button
     let productAddToCartBtn = document.createElement("button");
     productAddToCartBtn.setAttribute("id", `add-${listToRender[i].id}-button`);
     productAddToCartBtn.classList.add("product__info-buy-btn");
@@ -89,22 +79,19 @@ export function renderProductlist(listToRender: ProductTemplate[]) {
       `add-${listToRender[i].id}-button`
     ) as HTMLButtonElement;
 
-    //Adds eventlistener
     productButton.addEventListener("click", () => {
       let productsPageUserCart: CartProductTemplate[] =
         getUserCartFromLS() || "[]";
-        addProductToCart(
+      addProductToCart(
         productsPageUserCart,
         listToRender[i],
         productAmount.value
       );
-        renderUserCartinWidget();
+      renderUserCartinWidget();
     });
   }
 }
 
-
-// Clear filter button
 let filterBtn: HTMLButtonElement = document.getElementById(
   "clear-filter"
 ) as HTMLButtonElement;
@@ -123,8 +110,6 @@ filterBtn.addEventListener("click", () => {
   clearFilter();
 });
 
-
-// Filter button open
 const filterButton: HTMLButtonElement = document.getElementById(
   "filter-btn"
 ) as HTMLButtonElement;
@@ -134,8 +119,6 @@ filterButton.addEventListener("click", () => {
   console.log("filter was clicked");
 });
 
-
-// Filter button close
 const filterBackground: HTMLDivElement = document.getElementById(
   "filter-background"
 ) as HTMLDivElement;
@@ -144,8 +127,6 @@ filterBackground.addEventListener("click", () => {
   closeFilter();
 });
 
-
-// checkbox small
 let checkboxSmall: HTMLInputElement = document.getElementById(
   "checkbox-small"
 ) as HTMLInputElement;
@@ -154,7 +135,6 @@ checkboxSmall.addEventListener("change", (e) => {
   toggleSmall(checkboxSmall);
 });
 
-// checkbox medium
 let checkboxMedium: HTMLInputElement = document.getElementById(
   "checkbox-medium"
 ) as HTMLInputElement;
@@ -163,7 +143,6 @@ checkboxMedium.addEventListener("change", (e) => {
   toggleMedium(checkboxMedium);
 });
 
-// checkbox large
 let checkboxLarge: HTMLInputElement = document.getElementById(
   "checkbox-large"
 ) as HTMLInputElement;
@@ -172,7 +151,6 @@ checkboxLarge.addEventListener("change", (e) => {
   toggleLarge(checkboxLarge);
 });
 
-// checkbox healing
 let checkboxHealing: HTMLInputElement = document.getElementById(
   "checkbox-healing"
 ) as HTMLInputElement;
@@ -181,7 +159,6 @@ checkboxHealing.addEventListener("change", (e) => {
   toggleHealing(checkboxHealing);
 });
 
-// checkbox mana
 let checkboxMana: HTMLInputElement = document.getElementById(
   "checkbox-mana"
 ) as HTMLInputElement;
@@ -190,7 +167,6 @@ checkboxMana.addEventListener("change", (e) => {
   toggleMana(checkboxMana);
 });
 
-// checkbox stamina
 let checkboxStamina: HTMLInputElement = document.getElementById(
   "checkbox-stamina"
 ) as HTMLInputElement;
@@ -199,7 +175,6 @@ checkboxStamina.addEventListener("change", (e) => {
   toggleStamina(checkboxStamina);
 });
 
-// checkbox poisen
 let checkboxPoison: HTMLInputElement = document.getElementById(
   "checkbox-poison"
 ) as HTMLInputElement;
@@ -208,7 +183,6 @@ checkboxPoison.addEventListener("change", (e) => {
   togglePoison(checkboxPoison);
 });
 
-// checkbox joy
 let checkboxJoy: HTMLInputElement = document.getElementById(
   "checkbox-joy"
 ) as HTMLInputElement;
@@ -217,7 +191,6 @@ checkboxJoy.addEventListener("change", (e) => {
   toggleJoy(checkboxJoy);
 });
 
-// checkbox time
 let checkboxTime: HTMLInputElement = document.getElementById(
   "checkbox-time"
 ) as HTMLInputElement;
@@ -226,7 +199,6 @@ checkboxTime.addEventListener("change", (e) => {
   toggleTime(checkboxTime);
 });
 
-// checkbox invisibility
 let checkboxInvisibility: HTMLInputElement = document.getElementById(
   "checkbox-invisibility"
 ) as HTMLInputElement;
@@ -235,8 +207,6 @@ checkboxInvisibility.addEventListener("change", (e) => {
   toggleInvisibility(checkboxInvisibility);
 });
 
-
-// resets filter when reloading browser
 window.addEventListener("load", (e) => {
   checkboxSmall.checked = false;
   checkboxMedium.checked = false;
